@@ -1,3 +1,6 @@
+package com.example.guessinggame
+
+import android.util.Log
 import androidx.lifecycle.ViewModel
 
 class GameViewModel : ViewModel() {
@@ -10,6 +13,12 @@ class GameViewModel : ViewModel() {
 
     init {
         secretWordDisplay = deriveSecretWordDisplay()
+        Log.i("GameViewModel", "ViewModel init")
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        Log.i("GameViewModel", "ViewModel cleared")
     }
 
     fun deriveSecretWordDisplay() : String {
