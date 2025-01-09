@@ -3,6 +3,7 @@ import com.android.build.api.dsl.Packaging
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 
     id("androidx.navigation.safeargs")
 }
@@ -39,7 +40,11 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        compose = true
     }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = "1.7.6"
+//    }
 }
 
 dependencies {
@@ -53,6 +58,13 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.foundation)
+    implementation(libs.androidx.material)
+    implementation(libs.androidx.material.icons.core)
+    implementation(libs.androidx.material.icons.extended)
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
