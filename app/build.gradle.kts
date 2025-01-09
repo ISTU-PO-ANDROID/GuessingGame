@@ -39,12 +39,9 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
-        dataBinding = true
+//        dataBinding = true
         compose = true
     }
-//    composeOptions {
-//        kotlinCompilerExtensionVersion = "1.7.6"
-//    }
 }
 
 dependencies {
